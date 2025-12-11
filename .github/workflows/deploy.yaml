@@ -66,7 +66,7 @@ jobs:
           npm run build
 
           echo "Starting/restarting app with PM2..."
-          pm2 restart teso || pm2 start npm --name teso -- run start
+          pm2 restart teso || pm2 start npm --name teso -- run start -- -p 4001
 
           pm2 save
           EOF
