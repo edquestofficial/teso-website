@@ -2,7 +2,7 @@ name: Next.js Deploy to VPS
 
 on:
   push:
-    branches: [ "main" ]  
+    branches: [ "yogesh" ]  
   # pull_request:
   #   types: [closed]
   #   branches: [ "main" ]
