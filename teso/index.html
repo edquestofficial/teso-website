@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESO - Launching Soon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="image/teso.svg" alt="TESO Logo" width="150" style="width: 150px; height: auto;">
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="leaf-icon">🌿</div>
+            <h1 class="title">
+                <span class="launching">Launching soon</span>
+                <span class="purpose">with purpose</span>
+            </h1>
+        </div>
+
+        <!-- Coupon Card -->
+        <div class="coupon-card">
+            <div class="card-content">
+                <p class="coupon-text">
+                    Your 10% coupon will be sent<br>
+                    to your inbox<br>
+                    <strong>with 0% wastage</strong>
+                </p>
+
+                <form id="emailForm" class="email-form">
+                    <input type="email" id="emailInput" placeholder="Enter Email Address" required autocomplete="email">
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="btn-text">Get Code</span>
+                        <span class="btn-loader" style="display: none;">Sending...</span>
+                    </button>
+                </form>
+
+                <div class="growing-section">
+                    <h3>We are growing faster</h3>
+                    <p>Get 10% off on all your Teso purchases — for life.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize EmailJS - Replace with your own Public Key
+        // Get your keys at: https://www.emailjs.com/
+        (function () {
+            emailjs.init({
+                publicKey: "7ke9kvtOkZ-_B0vh0" // Replace with your EmailJS public key
+            });
+        })();
+
+        document.getElementById('emailForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('emailInput').value;
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoader = submitBtn.querySelector('.btn-loader');
+
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'inline';
+            submitBtn.disabled = true;
+
+            // EmailJS template parameters
+            const templateParams = {
+                to_email: email,
+                to_name: 'Valued Customer',
+                message: 'Congratulations! You will get 10% discount forever on all Teso purchases. Welcome to our sustainable fashion community!',
+                discount_code: 'TESO10LIFE'
+            };
+
+            // Send email using EmailJS
+            // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your EmailJS credentials
+            emailjs.send('service_ynesp7r', 'template_24nl9ue', templateParams)
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    // Redirect to success page
+                    window.location.href = 'success.html';
+                }, function (error) {
+                    console.log('FAILED...', error);
+                    // For demo purposes, still redirect to success page
+                    // In production, you might want to show an error message
+                    window.location.href = 'success.html';
+                })
+                .finally(function () {
+                    btnText.style.display = 'inline';
+                    btnLoader.style.display = 'none';
+                    submitBtn.disabled = false;
+                });
+        });
+    </script>
+</body>
+
+</html>
