@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Outfit', sans-serif;
-    background-color: #FEEBD8;
+    background-color: #FFF3EE;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -33,11 +33,15 @@ body {
 /* Hero Section */
 .hero {
     margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .leaf-icon {
-    font-size: 24px;
-    margin-bottom: 10px;
+     position: relative;
+     left: 149px;
+     top:16px;
 }
 
 .title {
@@ -47,9 +51,9 @@ body {
 }
 
 .launching {
-    font-size: 32px;
+    font-size: 39px;
     font-weight: 700;
-    color: #E67E22;
+    color: #CE6E14;
 }
 
 .purpose {
@@ -60,8 +64,8 @@ body {
 
 /* Coupon Card */
 .coupon-card {
-    background: linear-gradient(180deg, #E67E22 0%, #D35400 100%);
-    border-radius: 20px;
+    background: #CE6E14;
+    border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(230, 126, 34, 0.3);
 }
@@ -71,10 +75,14 @@ body {
 }
 
 .coupon-text {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 16px;
+    color: #FEEBD8;
+    font-size: 20px;
     line-height: 1.5;
-    margin-bottom: 25px;
+ }
+.strong-text {
+    color: #FEEBD8;
+    font-weight: 600;
+    font-size: 26px;
 }
 
 .coupon-text strong {
@@ -113,16 +121,19 @@ body {
 .submit-btn {
     width: 100%;
     padding: 14px 30px;
-    background-color: #2E5D1C;
+    background-color: #58A917;
     color: #FFFFFF;
     border: none;
-    border-radius: 25px;
+    border-radius: 5px;
     font-size: 16px;
     font-weight: 600;
     font-family: 'Outfit', sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(46, 93, 28, 0.3);
+}
+.btn-text {
+    color: #FEEBD8;
 }
 
 .submit-btn:hover {
@@ -147,14 +158,14 @@ body {
 }
 
 .growing-section h3 {
-    color: #FFFFFF;
-    font-size: 18px;
+    padding-top: 24px;
+        color: #FEEBD8;
     font-weight: 700;
     margin-bottom: 5px;
 }
 
 .growing-section p {
-    color: rgba(255, 255, 255, 0.85);
+    color: #FEEBD8;
     font-size: 13px;
 }
 
@@ -171,9 +182,10 @@ body {
 }
 
 .success-title {
-    font-size: 36px;
+    font-size: 39px;
+        color: #CE6E14;
     font-weight: 700;
-    color: #2E5D1C;
+    
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -185,13 +197,20 @@ body {
 }
 
 .success-subtitle {
-    font-size: 16px;
-    color: #E67E22;
+    font-size: 20px;
+    font-weight: 500;
+    color: #CE6E14;
     margin-bottom: 5px;
 }
 
 .no-expiry {
+    letter-spacing: -5%;
+    font-size: 20px;
+    font-weight: 100;
+    font-style: italic;
     color: #CE6E14;
+    
+    
 }
 
 .benefits-text {
@@ -205,10 +224,11 @@ body {
 .go-to-mail-btn {
     display: inline-block;
     padding: 14px 60px;
-    background-color: #2E5D1C;
+    background-color: #58A917;
     color: #FFFFFF;
-    border: none;
-    border-radius: 25px;
+    border: 5px;
+     text-align: center;
+    border-radius: 5px;
     font-size: 16px;
     font-weight: 600;
     font-family: 'Outfit', sans-serif;
@@ -216,6 +236,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(46, 93, 28, 0.3);
+    width: 100%;
 }
 
 .go-to-mail-btn:hover {
@@ -275,4 +296,13 @@ body {
 
 .success-content {
     animation: fadeIn 0.5s ease-out;
+}
+
+.br{
+    border: 2px solid red;
+}
+.success-leaf-icon{
+    position: relative;
+    left: 107px;
+    top:37px;
 }
