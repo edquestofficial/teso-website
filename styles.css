@@ -6,8 +6,8 @@
 }
 
 body {
-    font-family: 'Outfit', sans-serif;
-    background-color: #FFF3EE;
+    font-family: "Outfit", sans-serif;
+    background-color: #fff3ee;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -15,56 +15,59 @@ body {
     padding: 20px;
 }
 
+/* ✅ FIX: Responsive container */
 .container {
-    max-width: 380px;
     width: 100%;
-    padding: 20px 0;
+    max-width: 420px;
+    padding: 20px 16px;
 }
 
-/* Logo Styles */
+/* Logo */
 .logo {
     margin-bottom: 30px;
 }
 
-.logo svg text {
-    font-family: 'Outfit', sans-serif;
+.logo img {
+    width: 120px;
+    height: auto;
 }
 
 /* Hero Section */
 .hero {
+    position: relative;
     margin-bottom: 30px;
     display: flex;
     justify-content: center;
     text-align: center;
 }
 
+/* ✅ FIX: Leaf position same for all phones */
 .leaf-icon {
-     position: relative;
-     left: 149px;
-     top:16px;
+    position: absolute;
+    top: -22px;
+    left: 53%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: auto;
 }
 
 .title {
     display: flex;
     flex-direction: column;
     line-height: 1.1;
+    align-items: center;
 }
 
 .launching {
     font-size: 39px;
     font-weight: 700;
-    color: #CE6E14;
-}
-
-.purpose {
-    font-size: 32px;
-    font-weight: 700;
-    color: #2E5D1C;
+    color: #ce6e14;
 }
 
 /* Coupon Card */
 .coupon-card {
-    background: #CE6E14;
+    width: 100%;
+    background: #ce6e14;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(230, 126, 34, 0.3);
@@ -75,25 +78,25 @@ body {
 }
 
 .coupon-text {
-    color: #FEEBD8;
+    color: #feebd8;
     font-size: 20px;
     line-height: 1.5;
- }
-.strong-text {
-    color: #FEEBD8;
-    font-weight: 600;
-    font-size: 26px;
 }
 
-.coupon-text strong {
-    color: #FFFFFF;
-    font-weight: 700;
-    font-size: 18px;
+.strong-text {
+    color: #feebd8;
+    font-weight: 600;
+    font-size: 26px;
+    margin-top: 5px;
 }
 
 /* Email Form */
 .email-form {
-    margin-bottom: 30px;
+    margin: 20px 0 30px 0;
+}
+.main{
+    
+    margin-top: 20px;
 }
 
 .email-form input {
@@ -102,9 +105,9 @@ body {
     background: transparent;
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 14px;
-    font-family: 'Outfit', sans-serif;
+    font-family: "Outfit", sans-serif;
     outline: none;
     margin-bottom: 20px;
     transition: border-color 0.3s ease;
@@ -115,29 +118,30 @@ body {
 }
 
 .email-form input:focus {
-    border-bottom-color: #FFFFFF;
+    border-bottom-color: #ffffff;
 }
 
 .submit-btn {
     width: 100%;
     padding: 14px 30px;
-    background-color: #58A917;
-    color: #FFFFFF;
+    background-color: #58a917;
+    color: #ffffff;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     font-weight: 600;
-    font-family: 'Outfit', sans-serif;
+    font-family: "Outfit", sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(46, 93, 28, 0.3);
 }
+
 .btn-text {
-    color: #FEEBD8;
+    color: #feebd8;
 }
 
 .submit-btn:hover {
-    background-color: #3D7A26;
+    background-color: #3d7a26;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(46, 93, 28, 0.4);
 }
@@ -159,15 +163,66 @@ body {
 
 .growing-section h3 {
     padding-top: 24px;
-        color: #FEEBD8;
+    color: #feebd8;
     font-weight: 700;
     margin-bottom: 5px;
 }
 
 .growing-section p {
-    color: #FEEBD8;
+    color: #feebd8;
     font-size: 13px;
 }
+
+/* ============================ */
+/* MOBILE FIX FOR ALL DEVICES */
+ @media (max-width: 600px) {
+    body {
+        padding: 14px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 20px 14px;
+    }
+
+    .launching {
+        font-size: 32px;
+    }
+
+    .coupon-text {
+        font-size: 18px;
+    }
+
+    .strong-text {
+        font-size: 22px;
+    }
+
+    .card-content {
+        padding: 26px 18px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.coupon-card {
+    animation: fadeIn 0.6s ease-out 0.2s both;
+}
+
 
 /* ==================== */
 /* SUCCESS PAGE STYLES */
@@ -183,9 +238,9 @@ body {
 
 .success-title {
     font-size: 39px;
-        color: #CE6E14;
+    color: #CE6E14;
     font-weight: 700;
-    
+
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -209,8 +264,8 @@ body {
     font-weight: 100;
     font-style: italic;
     color: #CE6E14;
-    
-    
+
+
 }
 
 .benefits-text {
@@ -225,9 +280,9 @@ body {
     display: inline-block;
     padding: 14px 60px;
     background-color: #58A917;
-    color: #FFFFFF;
+    color: #F6DCC1;
     border: 5px;
-     text-align: center;
+    text-align: center;
     border-radius: 5px;
     font-size: 16px;
     font-weight: 600;
@@ -273,6 +328,42 @@ body {
     }
 }
 
+/* ✅ Very small screens (320px and below) */
+@media (max-width: 360px) {
+    .launching {
+        font-size: 26px;
+    }
+
+    .coupon-text {
+        font-size: 16px;
+    }
+
+    .strong-text {
+        font-size: 20px;
+    }
+
+    .card-content {
+        padding: 22px 16px;
+    }
+
+    .success-title {
+        font-size: 26px;
+    }
+
+    .success-leaf-icon {
+        left: 120px;
+    }
+
+    .growing-section h3 {
+        font-size: 16px;
+    }
+
+    .growing-section p {
+        font-size: 12px;
+    }
+}
+
+
 /* Animation */
 @keyframes fadeIn {
     from {
@@ -298,11 +389,35 @@ body {
     animation: fadeIn 0.5s ease-out;
 }
 
-.br{
+.br {
     border: 2px solid red;
 }
-.success-leaf-icon{
-    position: relative;
-    left: 107px;
-    top:37px;
+
+.success-title {
+    font-size: 39px;
+    color: #CE6E14;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
+
+.success-content {
+    position: relative;
+    margin-top: 50px;
+}
+
+/* Desktop margin for success page */
+@media (min-width: 601px) {
+    .success-content {
+        margin-top: 1px;
+    }
+}
+
+.success-leaf-icon {
+    position: absolute;
+    top: 66px;
+    /* adjust small */
+    left: 147px;
+    /* adjust small */
+    width: 28px;
+}
+ 
