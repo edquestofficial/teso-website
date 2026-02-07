@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teso</title>
+     <link rel="stylesheet" href="style2.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+</head>
+<body>
+    <div class="first">
+        <div class="navbar">
+            <img src="/photos/logo.png" alt="" class="logo">
+            <div class="nav-text">
+            <div class="homegrown">Homegrown Indian Brand</div>
+            <div class="get">Get Lifetime 10% Off</div>
+            </div>
+        </div>
+        <div class="content">
+            <h1>Launching soon with purpose</h1>
+            <div class="content1">
+            <div class="get10">
+                <p>Get 10% off on all your Teso purchase -<br><span class="forlife"> For Life</span></p>
+                <form class="newsletter-form" style="display: contents;">
+                    <div class="input-wrapper">
+                        <input type="email" placeholder="Enter Email Address" required autocomplete="email">
+                    </div>
+                    <button type="submit" class="get-code-btn">Get Code</button>
+                </form>
+                <p class="weare">We are growing faster</p>
+                <p class="tc">T & C apply</p>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="second">
+        <div class="images">
+            <img src="/photos/image1.png" alt="" class="imagee1">
+             <img src="/photos/image2.png" alt="" class="imagee2">
+        </div>
+         <div class="manifesto"><p>
+    <span class="dark">TESO</span>, A CLOTHING BRAND WAS CREATED BECAUSE WE<br>
+    <span class="dark">BELIEVE NATURE</span> AND DESIGN ARE DEEPLY CONNECTED.<br>
+    EVERY PRINT WE MAKE TELLS A STORY, AND EVERY
+    <span class="dark"> PRODUCT IS A PROMISE</span> TO<br>
+    <span class="dark">CARE FOR THE PLANET</span> AND SAY NO TO<br>
+    WASTEFUL FASHION.
+  </p>
+</div>
+    </div>
+    <div class="third">
+        <section class="subscribe">
+  <div class="subscribe-container">
+
+    <!-- LEFT IMAGE -->
+    <div class="subscribe-image">
+      <img src="/photos/model.png" alt="Model">
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="subscribe-content">
+      <h2>
+        Exclusive 10% off. No expiry. Ever.<br>
+        Forever yours.
+      </h2>
+
+      <form class="newsletter-form" style="display: contents;">
+        <div class="input-wrap">
+          <input type="email" placeholder="Enter Email Address" required autocomplete="email">
+        </div>
+        <button type="submit" class="subscribe-btn">Subscribe Now</button>
+      </form>
+
+      <div class="subscribe-footer">
+        <strong>We are growing faster</strong>
+        <p>Get 10% off on all your Teso purchases — for life.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    </div>
+    <div class="fourth">
+        <div class="secone">
+            <img src="/photos/teso.png" alt="" class="teso">
+            <p>Let's Connect</p>
+            <div class="social-list">
+                    <a href="#" class="social-item">
+                        <span class="tag">Whatsapp</span>
+                        <span class="arrow">›</span>
+                    </a>
+
+                    <a href="#" class="social-item">
+                        <span class="tag">Facebook</span>
+                        <span class="arrow">›</span>
+                    </a>
+
+                    <a href="#" class="social-item">
+                        <span class="tag">Instagram</span>
+                        <span class="arrow">›</span>
+                    </a>
+                    </div>
+
+        </div>
+        <div class="sectwo">
+            <p>Coming<br> Soon</p>
+        </div>
+    </div>
+    <!-- Success Popup Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="success-icon-container">
+                <img src="/photos/teso.png" alt="TESO Logo" class="modal-logo">
+            </div>
+            <h2 class="modal-title">Hurray!...</h2>
+            <p class="modal-subtitle">Your coupon comes with <span class="no-expiry">no expiry day</span></p>
+            <p class="modal-benefits">Enjoy your exclusive benefits</p>
+            <a href="https://mail.google.com" target="_blank" class="modal-mail-btn">Go to Mail</a>
+        </div>
+    </div>
+
+    <script>
+        // Initialize EmailJS
+        (function () {
+            emailjs.init({
+                publicKey: "7ke9kvtOkZ-_B0vh0"
+            });
+        })();
+
+        // Handle both newsletter forms
+        document.querySelectorAll('.newsletter-form').forEach(form => {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const emailInput = this.querySelector('input[type="email"]');
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerText;
+                const emailValue = emailInput.value;
+
+                // Show loading state
+                submitBtn.innerText = 'Sending...';
+                submitBtn.disabled = true;
+
+                // EmailJS template parameters
+                const templateParams = {
+                    to_email: emailValue,
+                    to_name: 'Valued Customer',
+                    message: 'Congratulations! You will get 10% discount forever on all Teso purchases. Welcome to our sustainable fashion community!',
+                    discount_code: 'TESO10LIFE'
+                };
+
+                // Send email using EmailJS
+                emailjs.send('service_ynesp7r', 'template_24nl9ue', templateParams)
+                    .then(function (response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        showSuccessModal();
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                        // Still show modal for demo purposes as in original index.html
+                        showSuccessModal();
+                    })
+                    .finally(function () {
+                        submitBtn.innerText = originalText;
+                        submitBtn.disabled = false;
+                        emailInput.value = '';
+                    });
+            });
+        });
+
+        const modal = document.getElementById("successModal");
+        const closeBtn = document.querySelector(".close-modal");
+
+        function showSuccessModal() {
+            modal.style.display = "flex";
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
