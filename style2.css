@@ -7,9 +7,8 @@
 .first {
   background-color: #cf6e14;
   width: 100%;
-  padding-left: 40px;
-  padding-right: 40px;
 }
+
 @media (max-width: 768px) {
   .first {
     padding-left: 0px;
@@ -19,6 +18,8 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .logo {
   margin-top: 12px;
@@ -73,6 +74,8 @@
   font-size: 60px;
   display: flex;
   justify-content: center;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .girl {
   width: 100%;
@@ -147,14 +150,6 @@
 /* second */
 .second {
   padding-top: 120px;
-  padding-right: 40px;
-  padding-left: 40px;
-}
-@media (max-width: 768px) {
-  .second {
-    padding-right: 0px;
-    padding-left: 0px;
-  }
 }
 .images {
   display: flex;
