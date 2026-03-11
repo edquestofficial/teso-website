@@ -10,6 +10,12 @@
   padding-left: 40px;
   padding-right: 40px;
 }
+@media (max-width: 768px) {
+  .first {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -143,6 +149,12 @@
   padding-top: 120px;
   padding-right: 40px;
   padding-left: 40px;
+}
+@media (max-width: 768px) {
+  .second {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 }
 .images {
   display: flex;
@@ -532,7 +544,7 @@ button:disabled {
     .content1 {
         height: 100vh;
         width: 100%;
-        padding: 0;
+        padding-right: 0 !important;
         background-image: url("/photos/girl2.png");
         background-size: cover;
         background-position: 25% top;
@@ -592,7 +604,7 @@ button:disabled {
     }
     
     .subscribe-content h2 {
-        font-size: 24px;
+        font-size: 19px;
         text-align: center;
     }
     
