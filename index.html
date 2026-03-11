@@ -151,14 +151,14 @@
                 // EmailJS template parameters
                 const templateParams = {
                     to_email: emailValue,
-                    from_email: 'contact@teso.co.in',
+                    from_email: 'connect@teso.co.in',
                     to_name: 'Valued Customer',
                     message: 'Congratulations! You will get 10% discount forever on all Teso purchases. Welcome to our sustainable fashion community!',
                     discount_code: 'TESO10LIFE'
                 };
 
                 // Send email using EmailJS
-                emailjs.send('service_ynesp7r', 'template_24nl9ue', templateParams)
+                emailjs.send('service_dfljd6k', 'template_24nl9ue', templateParams)
                     .then(function (response) {
                         console.log('SUCCESS!', response.status, response.text);
                         showSuccessModal();
